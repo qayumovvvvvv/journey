@@ -8,25 +8,10 @@
 			<div class="container">
 				<div class="col-md-9 single-right">
 					<div class="single-img">
-						<h4>Vestibulum ante ipsum primis in faucibus</h4>
-						<img src="{% static 'images/16.jpg' %}" alt="" />
-						<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum erat at neque fermentum, 
-							in auctor justo hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis tempor, 
-							mollis ligula ac, iaculis massa. Aliquam nec mollis neque, eget laoreet nibh. Vivamus dictum tempor enim, 
-							a porttitor dui lacinia vitae. Phasellus volutpat quam quis euismod pretium. Quisque magna sapien, molestie 
-							a tortor at, condimentum sodales sapien. Mauris maximus, leo sit amet volutpat ullamcorper, ex tellus ornare 
-							metus, eu gravida metus elit quis neque. Vivamus gravida quam arcu. Nam pretium lacus eget pellentesque auctor. 
-							Phasellus iaculis sapien nec lectus aliquet fringilla.
-						</p>
-						<p class="bottom-text">Cras in sem in arcu ultrices egestas sit amet nec metus. Suspendisse magna nisi, cursus ut condimentum eu, 
-							dapibus at dolor. Sed venenatis sapien quis urna consequat, quis tempor neque porttitor. Vivamus iaculis 
-							eleifend varius. Vestibulum quis justo massa. Mauris et eros mollis, placerat mauris nec, mattis purus. 
-							Aliquam elementum lorem ac efficitur tristique. Duis vehicula non sapien eget rhoncus.
-						</p>
-						<p class="text"> Mauris maximus, leo sit amet volutpat ullamcorper, ex tellus ornare 
-							metus, eu gravida metus elit quis neque. Vivamus gravida quam arcu. Nam pretium lacus eget pellentesque auctor. 
-							Phasellus iaculis sapien nec lectus aliquet fringilla.
-						</p>
+						<h4>{{last.title}}</h4>
+						<img src="{{last.img.url}}" alt="" />
+						<p class="text">{{last.body}}</p>
+						<p class="bottom-text">{{last.body}}</p>
 					</div>
 					<div class="author">
 						<ul>
@@ -40,21 +25,13 @@
 					<div class="posts">
 						<h4>Related Posts</h4>
 						<div class="posts-grids">
+							{% for place in last3 %}
 							<div class="col-md-4 posts-img">
-								<a href="single.html"><img src="{% static 'images/14.jpg' %}" alt="" /></a>
-								<a href="single.html">Cras in sem in arcu ultrices</a>
-								<p>Jan 14 , 2015</p>
+								<a href="single.html"><img src="{{place.img.url}}" alt="" /></a>
+								<a href="single.html">{{place.title}}</a>
+								<p>{{place.date}}</p>
 							</div>
-							<div class="col-md-4 posts-img">
-								<a href="single.html"><img src="{% static 'images/15.jpg' %}" alt="" /></a>
-								<a href="single.html">Cras in sem in arcu ultrices</a>
-								<p>Aug 08 , 2015</p>
-							</div>
-							<div class="col-md-4 posts-img">
-								<a href="single.html"><img src="{% static 'images/13.jpg' %}" alt="" /></a>
-								<a href="single.html">Cras in sem in arcu ultrices</a>
-								<p>May 23 , 2015</p>
-							</div>
+							{% endfor %}
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -160,36 +137,18 @@
 					</div>
 					<div class="popular">
 						<h4>Popular Articles</h4>
+						{% for place in places%}
 						<div class="popular-grids">
 							<div class="popular-left">
-								<a href="single.html"><img src="{% static 'images/13.jpg' %}" alt="" /></a>
+								<a href="single.html"><img src="{{place.img.url}}" alt="" /></a>
 							</div>
 							<div class="popular-right">
-								<a href="single.html">Cras in sem</a>
-								<p>Jan 14 , 2015</p>
+								<a href="single.html">{{place.title}}</a>
+								<p>{{place.date}}</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
-						<div class="popular-grids">
-							<div class="popular-left">
-								<a href="single.html"><img src="{% static 'images/14.jpg' %}" alt="" /></a>
-							</div>
-							<div class="popular-right">
-								<a href="single.html">Leiras ertyus</a>
-								<p>Jan 14 , 2015</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="popular-grids">
-							<div class="popular-left">
-								<a href="single.html"><img src="{% static 'images/15.jpg' %}" alt="" /></a>
-							</div>
-							<div class="popular-right">
-								<a href="single.html">Skeras ertyolo</a>
-								<p>Jan 14 , 2015</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 				<div class="clearfix"> </div>

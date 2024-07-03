@@ -28,6 +28,22 @@ def booking(request):
         "steps" : steps, 
         "places" : places, 
     }
+
+    if request.method == "POST":
+        print(1)
+        from_city = request.POST['from']
+        to_city = request.POST['to']
+        departure = request.POST['departure']
+        arrival = request.POST['arrival']
+        flight_cls = request.POST['class']
+
+        models.FindFlight.objects.create(
+            departure = from_city,
+            destination = to_city,
+            departure_date = departure,
+            arrival = arrival,
+            class_type = flight_cls
+        )
     return render(request, 'booking.html', context)
 
 def mail(request):
@@ -38,10 +54,14 @@ def mail(request):
     return render(request, 'mail.html', context)
 
 def single(request):
-    places = models.RecentVisitingPlaces.objects.all()
+    last = models.RecentVisitingPlaces.objects.last()
+    last3 = models.RecentVisitingPlaces.objects.all().order_by('-id')[:3]
+    places = models.RecentVisitingPlaces.objects.all()[:3]
     panel = models.CategoryPanel.objects.all()
     context = {
         "places" : places,
-        "panel" : panel
+        "panel" : panel,
+        "last" : last,
+        "last3" : last3
     }
     return render(request, 'single.html', context)
