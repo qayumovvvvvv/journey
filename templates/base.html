@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Journey a Travel Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+<!--theme-style-->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- web-font -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!-- web-font -->
+<!-- js -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		<!-- start-smoth-scrolling -->
+</head>
+	<body>
+		<!-- header -->
+		
+		<div class="header">
+			<!-- container -->
+			<div class="container">
+				<div class="head-bg">
+					<div class="head-logo">
+						<a href="index.html"><img src="{% static 'images/logo1.png' %}" alt="" /></a>
+					</div>
+					<div class="logo-border"><img src="{% static 'images/spirals.png' %}" alt="" /></div>
+					<div class="top-nav">
+						<span class="menu"><img src="{% static 'images/menu.png' %}" alt=""></span>
+							<ul class="cl-effect-1">
+								<li><a href="{% url 'qwerty' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">HOME</a></li>    
+								
+								<li><a href="{% url 'about1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">About</a></li>   
+								
+								<li><a href="{% url 'booking1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">BOOKING</a></li>   
+								
+								<li><a href="{% url 'mail1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">Mail</a></li>   
+								
+								<li><a href="{% url 'single1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">SINGLE</a></li>   
+
+							</ul>
+							<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.cl-effect-1" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+						<!-- /script-for-menu -->
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- //container -->
+		</div>
+
+    {% block content%}
+
+    {% endblock %}
+    
+    <div class="footer">
+        <!-- container -->
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-nav">
+                    <ul>
+                            <li><a href="{% url 'qwerty' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">HOME</a></li>    
+                            
+                            <li><a href="{% url 'about1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">About</a></li>   
+                              
+                            <li><a href="{% url 'booking1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">BOOKING</a></li>   
+                            
+                            <li><a href="{% url 'mail1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">Mail</a></li>   
+                            
+                            <li><a href="{% url 'single1' %}" onclick="this.disabled=true; this.innerHTML='Loading...';">SINGLE</a></li>  
+                    </ul>
+                </div>
+                <div class="footer-grids">
+                    <div class="col-md-3 footer-logo">
+                        <a href="index.html"><img src="{% static 'images/f-logo.png' %}" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 f-address">
+                        <h5>Address</h5>
+                        <ul>
+                            <li>756 gt globel Place,</li>
+                            <li>CD-Road,M 07 435.</li>
+                            <li>Telephone: +1 234 567 9871</li>
+                            <li>FAX: +1 234 567 9871</li>
+                            <li>E-mail : <a href="mailto:example@email.com">Example@mail.com</a></li>
+                    </div>
+                    <div class="col-md-6 f-address f-contact">
+                        <h5>Stay in Touch</h5>
+                        <form>
+                            <input type="text" placeholder="Email address" required="">
+                            <input type="submit" value="Sign Up">
+                        </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>Copyrights &copy 2015 Journey . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="dribbile"></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //footer -->
+    <script type="text/javascript">
+                                $(document).ready(function() {
+                                    /*
+                                    var defaults = {
+                                          containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear' 
+                                     };
+                                    */
+                                    
+                                    $().UItoTop({ easingType: 'easeOutQuart' });
+                                    
+                                });
+                            </script>
+                                <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- content-Get-in-touch -->
+</body>
+</html>

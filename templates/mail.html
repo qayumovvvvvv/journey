@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+		{% block content %}
+		<!-- //header -->
+		<div class="mail">
+			<!-- container -->
+			<div class="container">
+				<div class="mail-info">
+					<h3>Our Location</h3>
+				</div>
+				<div class="map">
+					<iframe src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=City+of+Westminster,+United+Kingdom&amp;aq=0&amp;oq=westmi&amp;sll=51.50917,-0.245132&amp;sspn=0.311545,0.837021&amp;ie=UTF8&amp;hq=&amp;hnear=City+of+Westminster,+Greater+London,+United+Kingdom&amp;ll=51.483521,-0.082054&amp;spn=0.155803,0.41851&amp;t=m&amp;z=12&amp;output=embed"></iframe>
+				</div>
+				<div class="mail-info-grids">
+					<div class="col-md-6 mail-info-grid">
+						<h3>Contact Information</h3>
+						<h6>The Company Name agi.
+						<span>756 gt globel Place,</span>
+							CD-Road,M 07 435.
+						</h6>
+						<p>Telephone: +1 234 567 9871
+						<span>FAX: +1 234 567 9871</span>
+						E-mail: <a href="mailto:info@example.com">mail@example.com</a>
+						</p>
+					</div>
+					<div class="col-md-6 contact-form">
+						<form>
+							<input type="text" placeholder="Name" required="">
+							<input type="text" placeholder="Email" required="">
+							<textarea placeholder="Message" required=""></textarea>
+							<input type="submit" value="SEND">
+						</form>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //mail -->
+		<!-- footer -->
+    {% endblock %}
