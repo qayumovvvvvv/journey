@@ -11,66 +11,15 @@
 					<h3>Recent Visiting Places</h3>
 				</div>
 				<div class="top-grids">
+					{% for place in places %}
 					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/6.jpg' %}" alt="" /></a>
+						<a href="single.html"><img src="{{place.img.url}}" alt="" /></a>
 						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
+							<a href="single.html">{{place.title}}</a>
+							<p>{{place.body}}</p>
 						</div>
 					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/3.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/2.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/4.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="top-grids">
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/2.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/4.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">	
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/6.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<a href="single.html"><img src="{% static 'images/3.jpg' %}" alt="" /></a>
-						<div class="top-grid-info">
-							<a href="single.html">Vestibulum auctor</a>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
+					{% endfor %}
 				</div>
 			</div>
 			<!-- //container -->

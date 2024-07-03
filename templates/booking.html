@@ -12,14 +12,14 @@
 				
 				<div class="clearfix"></div>
 				<div class="booking-grids">
-					<h3>WE ARE PROVIDE</h3>
+					<h3>WE PROVIDE</h3>
 					<div class="col-md-5 booking-grid-right">
-						<img src="{% static 'images/11.jpg' %}" alt="">
+						<img src="{{provide.img.url}}" alt="">
 					</div>
 					<div class="col-md-7 booking-grid-left">
-						<h4>QUISQUE LECTUS IPSUM, FERMENTUM EU SODALES NON, AUCTOR IN MAURIS. NULLA PRETIUM CURSUS NULLA, AC RUTRUM MAGNA LAOREET EU.</h4>
-						<p>Maecenas ultricies molestie efficitur. Maecenas bibendum tincidunt nulla at scelerisque. Fusce sodales nibh ex. Proin vel commodo neque. In congue neque ac venenatis aliquam. Sed vestibulum cursus velit faucibus tempor. Maecenas posuere pellentesque erat, vel auctor mauris fringilla ac. Proin euismod orci nec felis efficitur, a pulvinar nisl viverra. Etiam eu finibus ipsum, id molestie nunc</p>
-						<p>Maecenas ultricies molestie efficitur. Maecenas bibendum tincidunt nulla at scelerisque. Fusce sodales nibh ex. Proin vel commodo neque.</p>
+						<h4>{{provide.title}}</h4>
+						<p>{{provide.body}}</p>
+						
 						<div class="read-more red">
 							<a href="#">Read More >></a>
 						</div>
@@ -33,32 +33,17 @@
 				<div class="container">
 					<div class="how-to-info">
 						<h3>How To Book</h3>
-						<h4>Quisque lectus ipsum, fermentum eu sodales non, auctor in mauris. Nulla pretium cursus nulla, ac rutrum magna laoreet eu.
-							Phasellus vel est vel odio finibus lacinia. Donec a diam dictum, elementum ipsum et, pulvina
-						</h4>
-						<p>Duis vulputate auctor libero, eget viverra ante dapibus sit amet. Vestibulum auctor pellentesque enim, 
-						sed ornare metus vehicula eu. Etiam rhoncus eu urna ac feugiat. Praesent sed tempor urna, laoreet dignissim est. 
-						Aenean nec justo vitae arcu consequat lobortis. Sed iaculis et dui eu sollicitudin. Morbi id felis porttitor tellus 
-						viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam cursus 
-						leo nec enim vulputate finibus. Nulla at dui non nisi molestie posuere non sed ante. 
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Nulla at dui non nisi molestie posuere non sed ante. </p>
+						<h4>{{book.f_body}}</h4>
+						<p>{{book.s_body}}</p>
 					</div>
 					<div class="how-grids">
+						{% for step in steps %}
 						<div class="col-md-4 how-grid">
-							<span>1</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+							<span>{{step.id}}</span>
+							<a href="#">{{step.title}}</a>
+							<p>{{step.body}}</p>
 						</div>
-						<div class="col-md-4 how-grid">
-							<span>2</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="col-md-4 how-grid">
-							<span>3</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
+						{% endfor %}
 						<div class="clearfix"> </div>
 					</div>
 					<div class="booking-form">
@@ -158,18 +143,11 @@
 						<h3>VISITING PLACES</h3>
 					</div>
 					<div class="top-grids">
+						{% for place in places%}
 						<div class="top-grid">
-							<img src="{% static 'images/6.jpg' %}" alt="">
+							<img src="{{place.img.url}}" alt="">
 						</div>
-						<div class="top-grid">
-							<img src="{% static 'images/3.jpg' %}" alt="">
-						</div>
-						<div class="top-grid">
-							<img src="{% static 'images/2.jpg' %}" alt="">
-						</div>
-						<div class="top-grid">
-							<img src="{% static 'images/4.jpg' %}" alt="">
-						</div>
+						{% endfor %}
 						<div class="clearfix"> </div>
 					</div>
 				</div>

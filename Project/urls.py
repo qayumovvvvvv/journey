@@ -27,6 +27,5 @@ urlpatterns = [
     path('', views.main, name='qwerty'),
     path('mail/', views.mail, name = 'mail1'),
     path('single/', views.single, name = 'single1'),
-    path('ind/', views.ind)
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
