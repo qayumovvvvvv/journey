@@ -30,18 +30,17 @@ def booking(request):
     }
 
     if request.method == "POST":
-        print(1)
-        from_city = request.POST['from']
-        to_city = request.POST['to']
-        departure = request.POST['departure']
-        arrival = request.POST['arrival']
-        flight_cls = request.POST['class']
+        from_city = request.POST['from_city']
+        to_city = request.POST['to_city']
+        departure_time = request.POST['departure_time']
+        arrival_time = request.POST['arrival_time']
+        flight_cls = request.POST['flight_cls']
 
         models.FindFlight.objects.create(
             departure = from_city,
             destination = to_city,
-            departure_date = departure,
-            arrival = arrival,
+            departure_date = departure_time,
+            arrival = arrival_time,
             class_type = flight_cls
         )
     return render(request, 'booking.html', context)
@@ -51,6 +50,20 @@ def mail(request):
     context = {
         "contact" : contact
     }
+
+    if request.method == "POST":
+        print(12)
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        print(name, email, message)
+
+        models.Contact.objects.create(
+            full_name = name,
+            email = email,
+            message = message
+        )
+
     return render(request, 'mail.html', context)
 
 def single(request):
@@ -64,4 +77,12 @@ def single(request):
         "last" : last,
         "last3" : last3
     }
+
+    if request.method == "POST":
+        message = request.POST['message']
+
+        models.Reply.objects.create(
+            message = message
+        )
+    
     return render(request, 'single.html', context)

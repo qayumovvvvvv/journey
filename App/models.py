@@ -92,12 +92,8 @@ class SignUp(models.Model):
 
 
 class Reply(models.Model):
-    full_name = models.CharField(max_length=255)
-    email = models.EmailField()
     message = models.TextField()
 
-    def __str__(self):
-        return self.full_name
 
 
 class CategoryPanel(models.Model):

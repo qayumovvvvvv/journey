@@ -110,11 +110,10 @@
 					<div class="leave-reply">
 						<h4>Leave a reply</h4>
 						<div class="leave-form">
-							<form>
-								<input type="text" placeholder="Name" required="">
-								<input type="text" placeholder="Email" required="">
-								<textarea placeholder="Message" required=""></textarea>
-								<input type="submit" value="SEND">
+							<form action="#" method="post">
+								{% csrf_token %}
+								<textarea placeholder="Message" name="message" required=""></textarea>
+								<button type="submit"> Send</button>
 							</form>
 						</div>
 					</div>
