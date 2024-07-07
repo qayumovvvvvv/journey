@@ -9,6 +9,9 @@ class RecentVisitingPlaces(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta():
+        verbose_name_plural = 'Places'
 
 
 class AboutUs(models.Model):
@@ -18,6 +21,10 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    class Meta():
+        verbose_name_plural = 'About Us'
 
 
 class Our_team(models.Model):
@@ -27,6 +34,10 @@ class Our_team(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+    class Meta():
+        verbose_name_plural = 'Our team'
 
 
 class Provide(models.Model):
@@ -36,6 +47,10 @@ class Provide(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    class Meta():
+        verbose_name_plural = 'Provide'
 
 
 class HowToBook(models.Model):
@@ -44,6 +59,9 @@ class HowToBook(models.Model):
 
     def __str__(self):
         return self.f_body
+    
+    class Meta():
+        verbose_name_plural = 'How to Book'
 
 
 class HowToBookStep(models.Model):
@@ -52,6 +70,9 @@ class HowToBookStep(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta():
+        verbose_name_plural = 'Steps'
 
 
 class FindFlight(models.Model):
@@ -63,6 +84,10 @@ class FindFlight(models.Model):
 
     def __str__(self):
         return self.departure
+    
+
+    class Meta():
+        verbose_name_plural = 'Find Flight'
 
 
 class ContactInfo(models.Model):
@@ -73,7 +98,10 @@ class ContactInfo(models.Model):
 
     def __str__(self):
         return self.email
+    
 
+    class Meta():
+        verbose_name_plural = 'Contact informations'
 
 class Contact(models.Model):
     full_name = models.TextField()
@@ -82,6 +110,10 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.email
+    
+
+    class Meta():
+        verbose_name_plural = 'Contacts'
 
 
 class SignUp(models.Model):
@@ -89,10 +121,17 @@ class SignUp(models.Model):
 
     def __str__(self):
         return self.email
+    
+    class Meta():
+        verbose_name_plural = 'Sing ups'
 
 
 class Reply(models.Model):
     message = models.TextField()
+
+
+    class Meta():
+        verbose_name_plural = 'Replies'
 
 
 
@@ -101,3 +140,6 @@ class CategoryPanel(models.Model):
 
     def __str__(self):
         return self.category
+    
+    class Meta():
+        verbose_name_plural = 'Categories'
